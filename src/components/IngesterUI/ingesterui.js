@@ -8,20 +8,12 @@ const App = () => {
   // const [selectedFile, setSelectedFile] = useState(null); // File state
   const [pdfFiles, setPdfFiles] = useState([]);
   const [selectedFile, setSelectedFile] = useState(null);
+  // const [uploading, setUploading] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     fetchPdfs();
   }, []);
-
-  // const fetchPdfs = async () => {
-  //   try {
-  //     const response = await axios.get("http://127.0.0.1:8000/get_all_document/");
-  //     setPdfFiles(response.data);
-  //     console.log(response.data)
-  //   } catch (error) {
-  //     console.error("Error fetching PDFs:", error);
-  //   }
-  // };
 
   const fetchPdfs = async () => {
     try {
@@ -59,7 +51,7 @@ const App = () => {
   const handleUpload = async () => {
     // if (!selectedFile) return alert("Please select a file!");
     if (!selectedFile || !uploaderName) return alert("Please select a file and enter your name!");
-
+    setUploading(true);
     try {
       // const fileReader = new FileReader();
       // fileReader.onload = async () => {
@@ -82,6 +74,8 @@ const App = () => {
     } catch (error) {
       console.error("Error uploading file:", error);
       alert("Failed to upload file.");
+    }finally {
+      setUploading(false);  // Stop spinner
     }
   };
   
@@ -109,17 +103,24 @@ const App = () => {
       <div className="input-parameters" style={{ marginBottom: "20px" }}>
         <p>Name of uploader:- </p>
         <input type="text" placeholder="Enter your name" value={uploaderName} onChange={(e) => setUploaderName(e.target.value)}/>
-        <input type="file" className="custom-file-input" accept="application/pdf" onChange={handleFileChange} />
+        {/* <label for="file-upload" class="custom-file-upload">Choose Files</label> */}
+        <input type="file" className="file-upload" accept="application/pdf" onChange={handleFileChange} />
         <div className="file-choose-button" onClick={handleUpload}>Upload</div>
+        {uploading && (
+          <div className="uploading-message">
+            <div className="spinner"></div>
+            <p>Uploading in Progress...</p>
+          </div>
+        )}
       </div>
       <hr/>
       <table border="1" cellPadding="10" cellSpacing="0">
         <thead>
           <tr>
-            <th>ID</th>
             <th>File Name</th>
             <th>Uploader</th>
             <th>Date</th>
+            <th>ID</th>
             <th>Actions</th>
             
           </tr>
@@ -127,10 +128,10 @@ const App = () => {
         <tbody>
           {pdfFiles.map((pdf) => (
             <tr key={pdf.document_id}>
-              <td>{pdf.document_id}</td>
               <td>{pdf.document_name}</td>
               <td>{pdf.uploader_name}</td>
               <td>{pdf.datetime}</td>
+              <td>{pdf.document_id}</td>
               <td>
                 <button onClick={() => handleDelete(pdf.document_id)}>Delete</button>
               </td>

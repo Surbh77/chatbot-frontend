@@ -1,53 +1,8 @@
-/* .App {
-    text-align: center;
+  :root{
+    --orange-color:#FFA53D;
+    
   }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-   */
-  /* @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } */
-  
-  
-  
-  /* General Styles */
-  /* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-  } */
-  
+
   .title {
     
     text-align: center;
@@ -60,7 +15,7 @@
     justify-content: center;
     display: flex;
     flex-direction:row ;
-    color: white;
+    color: var(--orange-color);
     /* padding: 10px; */
   }
   
@@ -72,33 +27,83 @@
     border-radius: 10px;
     background-color: white;
   }
-  .file-choose-button{
-    border:2px #3b3b3c;
+  /* .input-parameters input[type="file"] {
+    display: none;
+  } */
+
+  /* .custom-file-upload {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: black;
+    background-color: var(--orange-color);
+  }
+ 
+  .custom-file-upload:hover{
+    background-color: #68686a;
+    color: white;
+  } */
+
+  .file-upload{
+    color: black;
   }
 
-  .file-choose-button:hover{
-    border:2px #68686a;
+  input[type=file]::file-selector-button {
+    border: none;
+    background: var(--orange-color);
+    padding: 2.5px 10px;
+    border-radius: 05px;
+    color: black;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
   }
 
-  .custom-file-input {
-    background-color: #f0f0f0; /* Light gray background */
-    border: 2px solid #3a3a3a; /* Blue border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px; /* Add some padding */
-    font-size: 16px; /* Adjust font size */
-    cursor: pointer; /* Change cursor on hover */
-    color: #3a3a3a; /* Blue text */
+  .uploading-message {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
   }
   
-  .custom-file-input:hover {
-    background-color: #3a3a3a; /* Blue background on hover */
-    color: #fff; /* White text on hover */
+  .spinner {
+    margin: 10px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  input[type=file]::file-selector-button:hover {
+    background: #68686a;
   }
 
-  .input-parameters div{
-    border: 2px white;
-    padding: 5px;
+
+  .input-parameters .file-choose-button{
+    margin-left: 20px;
+    color: black;
+    padding: 10px 20px;
+    border: 1px #1e1e1f;
+    border-radius: 20px;
+    background-color: var(--orange-color);
+    transition: background .2s ease-in-out;
     cursor: pointer;
+  }
+
+  .input-parameters .file-choose-button:hover{
+    background-color: #68686a;
+    color: white;
 
   }
   /* Table Styles */
@@ -121,6 +126,9 @@
     color: white;
   }
   
+  table tbody{
+    background-color: #282829;
+  }
   table th,
   table td {
     text-align: left;
@@ -129,26 +137,21 @@
     color: white;
   }
   
-  /* table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  } */
-  
-  /* table tbody tr:hover {
-    background-color: #f1f1f1;
-  } */
-  
+ 
   table button {
-    background-color: #3b3b3c;
-    color: white;
+    background-color: var(--orange-color);
+    color: #1e1e1f;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
+    transition: background .2s ease-in-out;
   }
   
   table button:hover {
     background-color: #68686a;
+    color: white;
   }
   
   /* Responsive Design */
