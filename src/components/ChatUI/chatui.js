@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import "./chatui.css";
-import   { LOGO } from "D:/Chatbot/app/frontend/src/constants/constant.js";
+// import   { LOGO } from "D:/Chatbot/app/frontend/src/constants/constant.js";
 
+import   { LOGO } from "../../constants/constant"
 
 const App = () => {
   const uuid = crypto.randomUUID();
@@ -58,7 +59,7 @@ const App = () => {
   const handleSend = async () => {  
 
 
-    // console.log("activeChat2==>>",activeChat)
+    console.log("activeChat2==>>",activeChat)
     if (input.trim()) {
       setInput("");
       const userMessage = { sender: "user", text: input };
@@ -69,8 +70,8 @@ const App = () => {
         const formattedText = formatText(activeChat.messages);
         NewChatTitle(formattedText,activeChat.id)
   
-        // console.log("activeChat1.title==>>",activeChat.title)
-        // console.log("activeChat1==>>",activeChat)
+        console.log("activeChat1.title==>>",activeChat.title)
+        console.log("activeChat1==>>",activeChat)
       }
 
 
@@ -118,7 +119,7 @@ const App = () => {
       <div className="sidebar-header">
       {sidebarOpen && <img src={LOGO} alt="Logo" className="sidebar-logo" />}
         <button className="toggle-sidebar-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
-          {sidebarOpen ? "«" : "»"}
+          {sidebarOpen ? "«" : "»"}  
         </button>
       </div>
 
@@ -167,6 +168,7 @@ const App = () => {
         )}
                 {message.sender === "voxi" && message.references.length > 0 && (
                   <div>
+                  
                   <button className="references-btn" onClick={() => toggleDrawer(message.references)}>
                     📄
                   </button>
@@ -179,6 +181,7 @@ const App = () => {
                   <button className="references-btn" >
                     ✉
                   </button>
+                  
                   </div>
                 )}
               </div>

@@ -1,68 +1,190 @@
-/* General Reset */
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    height: 100vh;
-    max-width:100%;
-  }
-  
-  
-  /* Full-screen container */
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    /* color: white; */
-  }
+/* Main container */
+body{
+  color: rgb(160, 160, 160);
+}
+.page-container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  /* Title styling */
-  h1 {
-    font-size: 250%;
-    margin-bottom: 20px;
-    color:white;
-  }
-  
-  /* Button styling */
-  .tabs {
-    height: 20%;
-    max-width: 100%;
-    width: 100%;
-    padding: 10% 0%;
-    font-weight: bold;
-    border: none;
-    border-radius: 6%;
-    transition: all 0.3s ease;
-  }
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-  .tab-link {
-    text-decoration: none;
-    padding: 5% 10%;
-    margin: 0 10px;
-    text-transform: uppercase;
-    background-color:#1e1e1f;
-    background-size: 200% auto;
-    color: white;
-    transition: 0.5s;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    box-shadow: 0 0 8px #505050;
-  }
+.header h1 {
+  font-size: 36px;
 
+}
 
-    
-  .tab-link:hover {
-    background-color:#505050;
-  }
-  
-   .tab-link:hover {
-     background-position: right center; /* change the direction of the change here */
-     color: #fff;
-     text-decoration: none;
-   }
+.header p {
+  font-size: 18px;
+
+}
+
+/* Introduction Section */
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro p {
+  font-size: 18px;
+
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Why Choose Section */
+.why-choose {
+  margin-bottom: 40px;
+}
+
+.why-choose h2 {
+  font-size: 28px;
+
+  text-align: center;
+}
+
+.why-choose ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.why-choose li {
+  font-size: 18px;
+
+  margin: 10px 0;
+}
+
+/* How It Works Section */
+.how-it-works {
+  margin-bottom: 40px;
+}
+
+.how-it-works h2 {
+  font-size: 28px;
+
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.step {
+  text-align: center;
+  flex: 1;
+}
+
+.step img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.step h3 {
+  font-size: 22px;
+
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+
+}
+
+/* What Can You Upload Section */
+.what-can-upload {
+  margin-bottom: 40px;
+}
+
+.what-can-upload h2 {
+  font-size: 28px;
+
+  text-align: center;
+}
+
+.what-can-upload ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.what-can-upload li {
+  font-size: 18px;
+
+  margin: 10px 0;
+}
+
+/* Features Section */
+.features {
+  margin-bottom: 40px;
+}
+
+.features h2 {
+  font-size: 28px;
+
+  text-align: center;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.features li {
+  font-size: 18px;
+
+  margin: 10px 0;
+}
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cta h2 {
+  font-size: 32px;
+
+}
+
+.cta p {
+  font-size: 18px;
+
+  margin-bottom: 40px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tab-link {
+  padding: 30px 60px;
+  background-color: #5b5b5b;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tab-link:hover {
+  background-color: #d1d1d1;
+  color: #5b5b5b;
+}
+
   
