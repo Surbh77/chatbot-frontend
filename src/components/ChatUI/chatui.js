@@ -66,12 +66,12 @@ const App = () => {
       // const updatedMessages = [...activeChat.messages, userMessage];
       setActiveChat({ ...activeChat, messages: [...activeChat.messages, userMessage] });
 
-      if (activeChat.messages.length==2 ){  
+      if (activeChat.messages.length===2 ){  
         const formattedText = formatText(activeChat.messages);
         NewChatTitle(formattedText,activeChat.id)
   
-        console.log("activeChat1.title==>>",activeChat.title)
-        console.log("activeChat1==>>",activeChat)
+        // console.log("activeChat1.title==>>",activeChat.title)
+        // console.log("activeChat1==>>",activeChat)
       }
 
 
